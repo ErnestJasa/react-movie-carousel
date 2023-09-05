@@ -1,0 +1,61 @@
+.background-color {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 17%,
+    rgba(8, 5, 59, 1) 100%
+  );
+}
+.text-color {
+  color: #b8b8b8;
+}
+html {
+  overflow: hidden;
+}
+.slider {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  width: 350px;
+  height: 450px;
+  object-fit: scale-down;
+}
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: -150px;
+  z-index: 10;
+  user-select: none;
+}
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: -150px;
+  z-index: 10;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+.carousel-item {
+  transition: transform 0.3s ease-in-out;
+}
+.carousel-item.active {
+  transform: translateX(0);
+}
+.carousel-item:not(.active) {
+  transform: translateX(100%);
+  opacity: 0;
+}
